@@ -15,7 +15,6 @@ function sleep(ms) {
 
 async function removeDiv() {
     let banner = document.getElementById("cn-banner");
-    console.log(banner)
     if (banner) {
       banner.parentNode.removeChild(banner);
     } else {
