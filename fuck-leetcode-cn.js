@@ -19,7 +19,7 @@ async function removeDiv() {
       banner.remove();
       break;
     }
-    await sleep(1000);
+    await sleep(300);
   }
 }
 
