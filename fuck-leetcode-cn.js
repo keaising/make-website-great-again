@@ -9,10 +9,6 @@
 // @run-at       document-end
 // ==/UserScript==
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 async function removeDiv() {
     let banner = document.getElementById("cn-banner");
     if (banner) {
@@ -26,3 +22,4 @@ async function removeDiv() {
   "use strict";
    removeDiv()
 })();
+
