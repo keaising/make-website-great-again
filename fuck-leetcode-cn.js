@@ -6,6 +6,7 @@
 // @author       keaising
 // @match        https://leetcode.com/*
 // @grant        none
+// @run-at       document-end
 // ==/UserScript==
 
 function sleep(ms) {
@@ -13,19 +14,16 @@ function sleep(ms) {
 }
 
 async function removeDiv() {
-  for (let i = 1; i < 20; i++) {
     let banner = document.getElementById("cn-banner");
+    console.log(banner)
     if (banner) {
-      banner.remove();
-      break;
+      banner.parentNode.removeChild(banner);
+    } else {
+      setTimeout(removeDiv, 300)
     }
-    await sleep(300);
-  }
 }
 
 (function () {
   "use strict";
-  $(document).ready(function () {
-    removeDiv();
-  });
+   removeDiv()
 })();
