@@ -8,24 +8,12 @@
 // @grant        none
 // ==/UserScript==
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-async function removeDiv() {
-  for (let i = 1; i < 20; i++) {
-    let banner = document.getElementById("cn-banner");
-    if (banner) {
-      banner.remove();
-      break;
-    }
-    await sleep(300);
-  }
-}
-
 (function () {
   "use strict";
-  $(document).ready(function () {
-    removeDiv();
+  Object.defineProperty(window, "renderTransfer2CnBar", {
+    value: "shutup",
+    writable: false,
+    configurable: false,
   });
 })();
+
