@@ -6,14 +6,20 @@
 // @author       keaising
 // @match        https://leetcode.com/*
 // @grant        none
+// @run-at       document-end
 // ==/UserScript==
+
+async function removeDiv() {
+    let banner = document.getElementById("cn-banner");
+    if (banner) {
+      banner.parentNode.removeChild(banner);
+    } else {
+      setTimeout(removeDiv, 300)
+    }
+}
 
 (function () {
   "use strict";
-  Object.defineProperty(window, "renderTransfer2CnBar", {
-    value: "shutup",
-    writable: false,
-    configurable: false,
-  });
+   removeDiv()
 })();
 
